@@ -4,7 +4,7 @@ import dynamical_system
 import torch
 
 
-model_device = "cuda"
+model_device = "cpu"
 
 #target = oscilator.Oscilator(30.0, 1.9)
 
