@@ -4,15 +4,17 @@ import dynamical_system
 import torch
 
 
+model_device = "cuda"
+
 #target = oscilator.Oscilator(30.0, 1.9)
 
 #create some random dynamical system
 order = 4
-target  = dynamical_system.DynamicalSystem(order, dt = 0.01, trainable=True, device="cpu")
+target  = dynamical_system.DynamicalSystem(order, dt = 0.01, trainable=True, device=model_device)
 target.set_random_transfer_matrix()
 
 #create model, with same order
-model  = dynamical_system.DynamicalSystem(order, dt = 0.01, trainable=True, device="cpu")
+model  = dynamical_system.DynamicalSystem(order, dt = 0.01, trainable=True, device=model_device)
 model.set_random_transfer_matrix()
 
 #solver for model, use ADAM, works fine for nets
